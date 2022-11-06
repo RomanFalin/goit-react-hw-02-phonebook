@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { customAlphabet } from 'nanoid';
 import { ContactForm, InputName, SubmitBtn } from './Form.styled';
+import { InputPlace } from 'components/Filter/Filter.styled';
 
 const nanoid = customAlphabet('1234567890abcdef', 10);
 
@@ -32,7 +33,7 @@ class Form extends Component {
       <ContactForm onSubmit={this.handleSubmit}>
         <label>
           <InputName>Name</InputName>
-          <input
+          <InputPlace
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -44,7 +45,7 @@ class Form extends Component {
         </label>
         <label>
           <InputName>Phone Number</InputName>
-          <input
+          <InputPlace
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
